@@ -17,13 +17,13 @@
 class AdvanceButton {
     public:
         /**
-         * initalize advance_button class and define pin, pull resistor & down state
+         * initalize AdvanceButton class and define pin, pull resistor & down state
          * 
          * @param pin where button is connected
          * @param pulltype setup internal resistors, use [INPUT, INPUT_PULLUP, INPUT_PULLDOWN]
          * @param dowstate pin state when button is down, use [HIGH, LOW]
          */
-        advance_button(int pin, int pulltype, int downstate) : btn_pin(pin), pull_type(pulltype), down_state(downstate) {}
+        AdvanceButton(int pin, int pulltype, int downstate) : btn_pin(pin), pull_type(pulltype), down_state(downstate) {}
 
         /**
          * prepare button pin
