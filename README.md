@@ -1,4 +1,4 @@
-# advance_button
+# AdvanceButton
 Arduino Library for detecting input events (click, hold, doubleclick). Can be used with any input source (button, capacitive senor, hall sensor, ...) that create bistate signal
 
 ---
