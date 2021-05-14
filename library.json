@@ -1,0 +1,26 @@
+{
+  "name": "AdvanceButton",
+  "version": "1.0.0",
+  "description": "Simple Button library that can detect if button was clicked, doubleclicked or hold. Works on any sort of input (button, capacitive sensor, hall sensor) with two states.",
+  "keywords": "button, hold, click, doubleclick",
+  "repository":
+  {
+    "type": "git",
+    "url": "https://github.com/arnytrty/AdvanceButton.git"
+  },
+  "authors":
+  [
+    {
+      "name": "Arnost Trtusek",
+      "email": "arnytrty@seznam.cz",
+      "url": ""
+    }
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "dependencies": {
+    
+  },
+  "frameworks": "arduino",
+  "platforms": "*"
+}
