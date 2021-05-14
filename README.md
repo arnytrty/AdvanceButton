@@ -3,9 +3,16 @@ Arduino Library for detecting input events (click, hold, doubleclick). Can be us
 
 *documentation in source code*
 
+If you want change doubleclick time & hold time you can do it in `AdvanceButton.h`
+
 ---
 
 ## Explaining example events.ino
+
+```
+#include <AdvanceButton.h>
+```
+Firts we include the library :D
 
 ```c++
 AdvanceButton btn(5, INPUT_PULLUP, LOW);
