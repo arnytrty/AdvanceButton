@@ -32,13 +32,13 @@ void AdvanceButton::update() {
                 }
             } else {
                 // check for hold
-                if(millis() - start_hold > HOLD_TIME) {
+                if(millis() - start_hold > LONGHOLD_TIME) {
                     holding = false;
                     two_in_row = false;
                     hold_done = true;
 
-                    if(hold != nullptr)
-                        hold();
+                    if(longhold != nullptr)
+                        longhold();
                 }
             }
         }
@@ -54,8 +54,17 @@ void AdvanceButton::update() {
                 if(doubleclick != nullptr)
                     doubleclick();
             } else {
-                click_wait = true;
-                last_click = millis();
+                // check for if is click or shorthold
+                if(millis() - start_hold > SHORTHOLD_TIME) {
+                    two_in_row = false;
+                    click_wait = false;
+
+                    if(shorthold != nullptr)
+                        shorthold();
+                } else {
+                    click_wait = true;
+                    last_click = millis();
+                }
             }
         }
 
@@ -94,8 +103,17 @@ void AdvanceButton::onDoubleClick(void (*ondoubleclickcallback)()) {
 /**
  * setup callback whitch is called whenever button is hold for some period of time
  * 
- * @param onholdcallback function without parameters
+ * @param onshortholdcallback function without parameters
  */
-void AdvanceButton::onHold(void (*onholdcallback)()) {
-    hold = onholdcallback;
+void onShortHold(void (*onshortholdcallback)()) {
+    shorthold = onshortholdcallback;
+}
+
+/**
+ * setup callback whitch is called whenever button is hold for some longer period of time
+ * 
+ * @param onlongholdcallback function without parameters
+ */
+void onLongHold(void (*onlongholdcallback)()) {
+    longhold = onlongholdcallback;
 }

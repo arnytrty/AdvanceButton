@@ -1,6 +1,6 @@
 {
   "name": "AdvanceButton",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple Button library that can detect if button was clicked, doubleclicked or hold. Works on any sort of input (button, capacitive sensor, hall sensor) with two states.",
   "keywords": "button, hold, click, doubleclick",
   "repository":

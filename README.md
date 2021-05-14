@@ -24,7 +24,8 @@ This will create object button that is bind to pin 5 of Arduino, INPUT_PULLUP en
 ```c++
 btn.onClick(onclick);
 btn.onDoubleClick(ondoubleclick);
-btn.onHold(onhold);
+btn.onShortHold(onshorthold);
+btn.onLongHold(onlonghold);
 ```
 
 *onClick*, *onDoubleClick* and *onHold* will bind function you defined inside your code, you can rebind to other function by simply swapping the parameter. After binding all functions, you can call

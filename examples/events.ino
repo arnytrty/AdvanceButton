@@ -26,8 +26,12 @@ void ondoubleclick() {
     Serial.println("[AdvanceButton] double click");
 }
 
-void onhold() {
-    Serial.println("[AdvanceButton] hold");
+void onshorthold() {
+    Serial.println("[AdvanceButton] shorthold");
+}
+
+void onlonghold() {
+	Serial.println("[AdvanceButton] longhold");
 }
 
 /**
@@ -42,7 +46,8 @@ void setup() {
     // initialize advance_button
 	btn.onClick(onclick);
 	btn.onDoubleClick(ondoubleclick);
-	btn.onHold(onhold);
+	btn.onShortHold(onshorthold);
+	btn.onLongHold(onlonghold);
 	btn.init();
 }
 
