@@ -12,7 +12,8 @@
 #include <Arduino.h>
 
 #define DOUBLE_TIME 100
-#define HOLD_TIME 1000
+#define SHORTHOLD_TIME 1000
+#define LONGHOLD_TIME 5000
 
 class AdvanceButton {
     public:
@@ -52,13 +53,20 @@ class AdvanceButton {
         /**
          * setup callback whitch is called whenever button is hold for some period of time
          * 
-         * @param onholdcallback function without parameters
+         * @param onshortholdcallback function without parameters
          */
-        void onHold(void (*onholdcallback)());
+        void onShortHold(void (*onshortholdcallback)());
+
+        /**
+         * setup callback whitch is called whenever button is hold for some longer period of time
+         * 
+         * @param onlongholdcallback function without parameters
+         */
+        void onLongHold(void (*onlongholdcallback)());
 
     private:
         int btn_pin, pull_type, down_state;
-        void (*click)() = nullptr, (*doubleclick)() = nullptr, (*hold)() = nullptr;
+        void (*click)() = nullptr, (*doubleclick)() = nullptr, (*shorthold)() = nullptr, (*longhold)() = nullptr;
 
         unsigned long start_hold, last_click;
         bool holding = false, two_in_row = false, click_wait, hold_done = false;
