@@ -27,12 +27,12 @@ void AdvanceButton::update() {
                 start_hold = millis();
 
                 // check for double touch
-                if(millis() - last_click <= DOUBLE_TIME) {
+                if(millis() - last_click <= BUTTON_DOUBLE_TIME) {
                     two_in_row = true;
                 }
             } else {
                 // check for hold
-                if(millis() - start_hold > LONGHOLD_TIME) {
+                if(millis() - start_hold > BUTTON_LONGHOLD_TIME) {
                     holding = false;
                     two_in_row = false;
                     hold_done = true;
@@ -55,7 +55,7 @@ void AdvanceButton::update() {
                     doubleclick();
             } else {
                 // check for if is click or shorthold
-                if(millis() - start_hold > SHORTHOLD_TIME) {
+                if(millis() - start_hold > BUTTON_SHORTHOLD_TIME) {
                     two_in_row = false;
                     click_wait = false;
 
@@ -70,7 +70,7 @@ void AdvanceButton::update() {
 
         // check for touch pending
         if(click_wait) {
-            if(millis() - last_click > DOUBLE_TIME) {
+            if(millis() - last_click > BUTTON_DOUBLE_TIME) {
                 click_wait = false;
 
                 if(click != nullptr)
