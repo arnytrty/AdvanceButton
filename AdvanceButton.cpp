@@ -105,7 +105,7 @@ void AdvanceButton::onDoubleClick(void (*ondoubleclickcallback)()) {
  * 
  * @param onshortholdcallback function without parameters
  */
-void onShortHold(void (*onshortholdcallback)()) {
+void AdvanceButton::onShortHold(void (*onshortholdcallback)()) {
     shorthold = onshortholdcallback;
 }
 
@@ -114,6 +114,6 @@ void onShortHold(void (*onshortholdcallback)()) {
  * 
  * @param onlongholdcallback function without parameters
  */
-void onLongHold(void (*onlongholdcallback)()) {
+void AdvanceButton::onLongHold(void (*onlongholdcallback)()) {
     longhold = onlongholdcallback;
 }
