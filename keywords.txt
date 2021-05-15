@@ -1,0 +1,7 @@
+AdvanceButton KEYWORD1
+init  KEYWORD2
+update  KEYWORD2
+onClick KEYWORD2
+onDoubleClick KEYWORD2
+onShortHold KEYWORD2
+onLongHold  KEYWORD2
