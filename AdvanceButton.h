@@ -11,9 +11,17 @@
 
 #include <Arduino.h>
 
-#define DOUBLE_TIME 100
-#define SHORTHOLD_TIME 1000
-#define LONGHOLD_TIME 5000
+#ifndef BUTTON_DOUBLE_TIME
+    #define BUTTON_DOUBLE_TIME 100
+#endif
+
+#ifndef BUTTON_SHORTHOLD_TIME
+    #define BUTTON_SHORTHOLD_TIME 1000
+#endif
+
+#ifndef BUTTON_LONGHOLD_TIME
+    #define BUTTON_LONGHOLD_TIME 5000
+#endif
 
 class AdvanceButton {
     public:
